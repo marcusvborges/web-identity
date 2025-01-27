@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebIdentity.Entities;
 
 namespace WebIdentity.Context
 {
-    public class MySQLDbContext : DbContext
+    public class MySQLDbContext : IdentityDbContext
     {
         public MySQLDbContext(DbContextOptions<MySQLDbContext> options) :
             base(options) 
