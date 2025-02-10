@@ -218,13 +218,16 @@ namespace WebIdentity.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WebIdentity.Entities.User", b =>
+            modelBuilder.Entity("WebIdentity.Entities.Employee", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserId"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<string>("Department")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -239,14 +242,14 @@ namespace WebIdentity.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("EmployeeId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Employees");
 
                     b.HasData(
                         new
                         {
-                            UserId = 1,
+                            EmployeeId = 1,
                             Email = "marcusvbs2018@gmail.com",
                             Idade = 25,
                             Name = "AdmimInitialUser"

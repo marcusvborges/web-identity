@@ -11,23 +11,24 @@ using WebIdentity.Entities;
 
 namespace WebIdentity.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class UsersController : Controller
+    [Authorize]
+    public class EmployeeController : Controller
     {
         private readonly MySQLDbContext _context;
 
-        public UsersController(MySQLDbContext context)
+        public EmployeeController(MySQLDbContext context)
         {
             _context = context;
         }
 
-        // GET: Users
+
+        //[AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View(await _context.Employees.ToListAsync());
         }
 
-        // GET: Users/Details/5
+        [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +36,36 @@ namespace WebIdentity.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
+            var employee = await _context.Employees
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(employee);
         }
 
-        // GET: Users/Create
+        [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,Name,Email,Idade")] User user)
+        public async Task<IActionResult> Create([Bind("EmployeeId,Name,Email,Idade")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
+                _context.Add(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return View(employee);
         }
 
-        // GET: Users/Edit/5
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +73,19 @@ namespace WebIdentity.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null)
             {
                 return NotFound();
             }
-            return View(user);
+            return View(employee);
         }
 
-        // POST: Users/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,Name,Email,Idade")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Email,Idade")] Employee employee)
         {
-            if (id != user.UserId)
+            if (id != employee.EmployeeId)
             {
                 return NotFound();
             }
@@ -99,12 +94,12 @@ namespace WebIdentity.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    _context.Update(employee);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.UserId))
+                    if (!employeeExists(employee.EmployeeId))
                     {
                         return NotFound();
                     }
@@ -115,45 +110,44 @@ namespace WebIdentity.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return View(employee);
         }
 
-        // GET: Users/Delete/5
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Employees == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (user == null)
+            var employee = await _context.Employees
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(employee);
         }
 
-        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user != null)
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee != null)
             {
-                _context.Users.Remove(user);
+                _context.Employees.Remove(employee);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(int id)
+        private bool employeeExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.Employees.Any(e => e.EmployeeId == id);
         }
     }
 }

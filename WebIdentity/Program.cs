@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 using WebIdentity.Context;
+using WebIdentity.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,14 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     options.SlidingExpiration = true;
 });
 
+builder.Services.AddAuthorization(options => 
+{
+    options.AddPolicy("RequireUserAdminSuperAdminRole", 
+        policy => policy.RequireRole("User", "Admin", "SuperAdmin"));
+});
+
+builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,11 +56,29 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+await CreateUsersProfileAsync(app);
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=SuperAdmin}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+async Task CreateUsersProfileAsync(WebApplication app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (var scope = scopedFactory.CreateScope())
+    {
+        var service = scope.ServiceProvider.GetService<ISeedUserRoleInitial>();
+        await service.SeedRoleAsync();
+        await service.SeedUserAsync();
+    }
+}

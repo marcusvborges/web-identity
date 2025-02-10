@@ -10,16 +10,16 @@ namespace WebIdentity.Context
             base(options) 
         { }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Employee>()
             .HasData(
-                new User
+                new Employee
                 {
-                    UserId = 1,
+                    EmployeeId = 1,
                     Name = "AdmimInitialUser",
                     Email = "marcusvbs2018@gmail.com",
                     Idade = 25

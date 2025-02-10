@@ -1,0 +1,73 @@
+[33mcommit b1c72cd231e0d6f460601666f807bd1b2e33a5a0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Marcus Vinicius <marcusvbs2018@gmail.com>
+Date:   Mon Jan 27 17:00:43 2025 -0300
+
+    Feat: Adding login authentication and user cookies config
+
+[33mcommit 27308c79e475e78a76b0a7ed76190985c30ecbbd[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 15:52:37 2025 -0300
+
+    :feat:Feat: Adding UsersController and listing Users
+
+[33mcommit 05a08c096e2dddd9231f3e3f850c88c3a3aa976c[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:45:06 2025 -0300
+
+    :DOCS:Add README document
+
+[33mcommit b6888aa717838fa060174799d529ba8e268aa0ba[m
+Merge: 7c99d22 28ba2dd
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:37:58 2025 -0300
+
+    Merge branch 'main' of https://github.com/marcusvborges/web-identity
+
+[33mcommit 7c99d2256f62e9c12d57c00042d5a666cd5a3977[m
+Merge: a0b8fc1 545a659
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:32:51 2025 -0300
+
+    Merge branch 'recuperacao-dados'
+
+[33mcommit a0b8fc19635ae4fe8a06fa445b5a5221fc78b5a2[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:11:56 2025 -0300
+
+    :CHORE:updating main data
+
+[33mcommit 545a659d38e4d7997622c990182cd14a4e4a179b[m[33m ([m[1;32mrecuperacao-dados[m[33m)[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:07:54 2025 -0300
+
+    :CHORE:recovering data
+
+[33mcommit c4eb805c95446e425b2befcf32b83f933b9a5402[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 14:03:04 2025 -0300
+
+    update main
+
+[33mcommit 28ba2dde3fb36570a822cdb994d3021232a9eee2[m
+Author: Marcus Vinícius <75540467+marcusvborges@users.noreply.github.com>
+Date:   Tue Jan 21 13:42:24 2025 -0300
+
+    Delete README.md
+
+[33mcommit d17df9f07b7bfc12bd81708c1813116b12127a78[m
+Author: Marcus Vinícius <75540467+marcusvborges@users.noreply.github.com>
+Date:   Tue Jan 21 11:54:33 2025 -0300
+
+    Update README.md
+
+[33mcommit d2d7da9a6533fd868ea8b7608cef5621ecc78e94[m
+Author: Marcus Vinícius <75540467+marcusvborges@users.noreply.github.com>
+Date:   Tue Jan 21 11:40:30 2025 -0300
+
+    Initial commit
+
+[33mcommit 0b303d3183ca0f85cf257b47678f6406f2e6edc5[m
+Author: Marcus Vinícius <marcusvbs2018@gmail.com>
+Date:   Tue Jan 21 11:15:33 2025 -0300
+
+    :tada:initial commit
