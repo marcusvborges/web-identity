@@ -237,7 +237,7 @@ namespace WebIdentity.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("varchar(120)");
 
-                    b.Property<int>("Idade")
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -254,7 +254,7 @@ namespace WebIdentity.Migrations
                         {
                             EmployeeId = 1,
                             Email = "marcusvbs2018@gmail.com",
-                            Idade = 25,
+                            Age = 25,
                             Name = "AdmimInitialUser"
                         });
                 });

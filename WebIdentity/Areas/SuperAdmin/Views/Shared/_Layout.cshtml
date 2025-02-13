@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SuperAdmin</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/WebIdentity.styles.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
 
                 <a class="navbar-brand" asp-area="SuperAdmin" asp-controller="SuperAdmin" asp-action="Index">SuperAdmin</a>
                 <a class="nav-link text-light" asp-area="SuperAdmin" asp-controller="SuperAdminRoles" asp-action="Index">Manage Roles</a>
                 <a class="nav-link text-light" asp-area="SuperAdmin" asp-controller="SuperAdminUsers" asp-action="Index">Manage Users</a>
-
-
                 <div class="navbar-collapse collapse d-sm-inline-flex">              
                 </div>
             </div>

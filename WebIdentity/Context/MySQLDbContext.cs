@@ -22,7 +22,7 @@ namespace WebIdentity.Context
                     EmployeeId = 1,
                     Name = "AdmimInitialUser",
                     Email = "marcusvbs2018@gmail.com",
-                    Idade = 25
+                    Age = 25
                 }
             );
         }

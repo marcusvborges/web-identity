@@ -17,99 +17,115 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebIdentity
 build_property.RootNamespace = WebIdentity
-build_property.ProjectDir = C:\dotNetProjects\WebIdentity\WebIdentity\
+build_property.ProjectDir = C:\dotNetProjects\web-identity\WebIdentity\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\dotNetProjects\WebIdentity\WebIdentity
+build_property.MSBuildProjectDirectory = C:\dotNetProjects\web-identity\WebIdentity
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Areas/SuperAdmin/Views/Shared/_Layout.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminRoles/Index.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminRoles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminRoles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluUm9sZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminRoles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Areas/SuperAdmin/Views/SuperAdmin/Index.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminRoles/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluUm9sZXNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdminUsers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/SuperAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xTdXBlckFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Areas/SuperAdmin/Views/_ViewImports.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Areas/SuperAdmin/Views/_ViewStart.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Areas/SuperAdmin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3VwZXJBZG1pblxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Account/AccessDenied.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Account/Login.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Account/Register.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Employee/Create.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Employee/Delete.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Employee/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Employee/Details.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Employee/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Employee/Edit.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Employee/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Employee/Index.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Home/Index.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Home/Privacy.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Shared/Error.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Shared/_LoginPartial.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Shared/_LoginSuperAdmin.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Shared/_LoginSuperAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblN1cGVyQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/_ViewImports.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/_ViewStart.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/dotNetProjects/WebIdentity/WebIdentity/Views/Shared/_Layout.cshtml]
+[C:/dotNetProjects/web-identity/WebIdentity/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i22uyo9y4d

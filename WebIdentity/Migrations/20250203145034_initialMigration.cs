@@ -79,7 +79,7 @@ namespace WebIdentity.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "varchar(120)", maxLength: 120, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Idade = table.Column<int>(type: "int", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     Department = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -218,7 +218,7 @@ namespace WebIdentity.Migrations
 
             migrationBuilder.InsertData(
                 table: "Employees",
-                columns: new[] { "EmployeeId", "Department", "Email", "Idade", "Name" },
+                columns: new[] { "EmployeeId", "Department", "Email", "Age", "Name" },
                 values: new object[] { 1, null, "marcusvbs2018@gmail.com", 25, "AdmimInitialUser" });
 
             migrationBuilder.CreateIndex(

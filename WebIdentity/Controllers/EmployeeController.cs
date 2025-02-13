@@ -54,7 +54,7 @@ namespace WebIdentity.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Name,Email,Idade")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,Name,Email,Age,Department")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace WebIdentity.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Email,Idade")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Email,Age,Department")] Employee employee)
         {
             if (id != employee.EmployeeId)
             {

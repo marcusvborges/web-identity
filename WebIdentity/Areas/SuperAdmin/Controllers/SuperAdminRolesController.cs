@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Elfie.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NuGet.DependencyResolver;
 using System.ComponentModel.DataAnnotations;
@@ -46,15 +47,20 @@ namespace WebIdentity.Areas.SuperAdmin.Controllers
         {
             IdentityRole role = await roleManager.FindByIdAsync(id);
 
-            List<IdentityUser> members = new List<IdentityUser>();
-            List<IdentityUser> nonMembers = new List<IdentityUser>();
-
-            foreach (IdentityUser user in userManager.Users)
+            if (role == null)
             {
-                var list = await userManager.IsInRoleAsync(user, role.Name) ? members : nonMembers;
-
-                list.Add(user);
+                return NotFound();
             }
+
+            // Gets the users belongings to the role
+            var usersInRole = await userManager.GetUsersInRoleAsync(role.Name);
+
+            // Get all users
+            var allUsers = await userManager.Users.ToListAsync();
+
+            // Separates between members and non-members
+            List<IdentityUser> members = allUsers.Where(u => usersInRole.Contains(u)).ToList();
+            List<IdentityUser> nonMembers = allUsers.Where(u => !usersInRole.Contains(u)).ToList();
 
             return View(new RoleEdit
             {
@@ -70,8 +76,8 @@ namespace WebIdentity.Areas.SuperAdmin.Controllers
         {
             IdentityResult result;
 
-            if (ModelState.IsValid) 
-            { 
+            if (ModelState.IsValid)
+            {
                 foreach (string userId in model.AddIds ?? new string[] { })
                 {
                     IdentityUser user = await userManager.FindByIdAsync(userId);
@@ -105,12 +111,12 @@ namespace WebIdentity.Areas.SuperAdmin.Controllers
         {
             IdentityRole role = await roleManager.FindByIdAsync(id);
 
-            if (role == null) 
+            if (role == null)
             {
                 ModelState.AddModelError("", "Role not found");
                 return View("Index", roleManager.Roles);
             }
-            
+
             return View(role);
 
         }

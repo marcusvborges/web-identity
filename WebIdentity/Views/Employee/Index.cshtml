@@ -7,7 +7,7 @@
 <h1>Employees</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -19,7 +19,10 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Idade)
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
             </th>
             <th></th>
         </tr>
@@ -34,12 +37,15 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Idade)
+                @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmployeeId" class="btn btn-secondary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }
