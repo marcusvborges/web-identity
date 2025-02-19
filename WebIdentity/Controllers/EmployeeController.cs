@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebIdentity.Context;
 using WebIdentity.Entities;
+using WebIdentity.Enums;
 
 namespace WebIdentity.Controllers
 {
@@ -49,6 +50,15 @@ namespace WebIdentity.Controllers
         [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public IActionResult Create()
         {
+            ViewBag.HierarchicalLevels = Enum.GetValues(typeof(HierarchicalLevel))
+                                             .Cast<HierarchicalLevel>()
+                                             .Select(e => new SelectListItem
+                                             {
+                                                 Text = e.ToString(),    // Nome do Enum
+                                                 Value = e.ToString()    // Valor do Enum
+                                             })
+                                             .ToList();
+
             return View();
         }
 

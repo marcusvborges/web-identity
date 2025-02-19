@@ -47,7 +47,9 @@ namespace WebIdentity.Context
                 .HasForeignKey(e => e.DepartmentId)  // Chave estrangeira no Funcionário
                 .OnDelete(DeleteBehavior.Restrict);  // Impede deleção em cascata (opcional)
 
-            // Outros relacionamentos ou configurações podem ser feitas aqui
+            modelBuilder.Entity<Employee>()
+                .Property(f => f.HierarchicalLevel)
+                .HasConversion<string>(); // Armazena como string no banco
         }
     }
 }

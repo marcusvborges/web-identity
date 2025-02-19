@@ -23,22 +23,17 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="BirthDate" class="control-label"></label>
+                <label asp-for="BirthDate" class="control-label">Birth Date</label>
                 <input asp-for="BirthDate" class="form-control" type="date"/>
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
-                <span asp-validation-for="Department" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-2">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="DateAdmission" class="control-label"></label>
+                <label asp-for="DateAdmission" class="control-label">Date Admission</label>
                 <input asp-for="DateAdmission" class="form-control" />
                 <span asp-validation-for="DateAdmission" class="text-danger"></span>
             </div>
@@ -58,13 +53,14 @@
                 @* <input asp-for="Sector" class="form-control" /> *@
                 <span asp-validation-for="Department" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="HierarchicalLevel" class="control-label"></label>
-                @Html.EnumDropDownListFor(model => model.HierarchicalLevel, htmlAttributes: new { @class = "form-control" })
-                <span asp-validation-for="HierarchicalLevel" class="text-danger"></span>
-            </div> *@
 
-            <div class="form-group">
+            <div class="form-group mb-3">
+                <label asp-for="HierarchicalLevel" class="control-label">Level</label>
+                @Html.DropDownListFor(model => model.HierarchicalLevel, (IEnumerable<SelectListItem>)ViewBag.HierarchicalLevels, "Select a level", new { @class = "form-control" })
+                <span asp-validation-for="HierarchicalLevel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-2">
                 <input type="submit" value="Create" class="btn btn-primary" />
                 <a class="btn btn-secondary" asp-action="Index">Back to List</a>
             </div>
