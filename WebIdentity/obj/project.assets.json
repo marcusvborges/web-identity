@@ -6428,8 +6428,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcu\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Marcus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6437,15 +6436,11 @@
       "projectUniqueName": "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj",
       "projectName": "WebIdentity",
       "projectPath": "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj",
-      "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Marcus\\.nuget\\packages\\",
       "outputPath": "C:\\dotNetProjects\\web-identity\\WebIdentity\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Marcus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6521,7 +6516,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
