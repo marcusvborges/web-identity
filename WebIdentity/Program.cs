@@ -13,9 +13,6 @@ builder.Services.AddControllersWithViews();
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnectionString");
 
-//builder.Services.AddDbContext<MySQLDbContext>(options => 
-//    options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
-
 builder.Services.AddDbContext<MySQLDbContext>(options =>
     options.UseMySql(connection, ServerVersion.AutoDetect(connection)),
     ServiceLifetime.Scoped);

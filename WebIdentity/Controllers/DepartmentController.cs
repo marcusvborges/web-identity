@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebIdentity.Context;
 using WebIdentity.Entities;
 
 namespace WebIdentity.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly MySQLDbContext _context;

@@ -38,25 +38,39 @@
                 <span asp-validation-for="DateAdmission" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
+
                 <label asp-for="Sector" class="control-label"></label>
-                <select asp-for="SectorId" asp-items="ViewBag.Sectors" class="form-control" id="sectorDropdown" required>
-                    <option value="">Select a sector</option>
+                <select asp-for="SectorId" class="form-select" asp-items="ViewBag.Sectors">
+                    <option value="" disabled selected>Select a sector</option>
                 </select>
+
+               @*  <label asp-for="Sector" class="control-label"></label>
+                <select asp-for="SectorId" class="form-select" asp-items="ViewBag.Sectors"  id="sectorDropdown" required>
+                    <option value="" disabled selected>Select a sector</option>
+                </select> *@
                 @* <input asp-for="Sector" class="form-control" /> *@
-                <span asp-validation-for="Sector" class="text-danger"></span>
+               @*  <span asp-validation-for="Sector" class="text-danger"></span> *@
             </div>
             <div class="form-group mb-2">
+
                 <label asp-for="Department" class="control-label"></label>
-                <select asp-for="DepartmentId" asp-items="ViewBag.Departments" class="form-control" id="departmentDropdown" required>
-                    <option value="">Select a department</option>
+                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments">
+                    <option value="" disabled selected>Select a department</option>
                 </select>
+
+                @* <label asp-for="Department" class="control-label"></label>
+                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments" id="departmentDropdown" required>
+                    <option value="" disabled selected>Select a department</option>
+                </select> *@
                 @* <input asp-for="Sector" class="form-control" /> *@
-                <span asp-validation-for="Department" class="text-danger"></span>
+                @* <span asp-validation-for="Department" class="text-danger"></span> *@
             </div>
 
             <div class="form-group mb-3">
                 <label asp-for="HierarchicalLevel" class="control-label">Level</label>
-                @Html.DropDownListFor(model => model.HierarchicalLevel, (IEnumerable<SelectListItem>)ViewBag.HierarchicalLevels, "Select a level", new { @class = "form-control" })
+                <select asp-for="HierarchicalLevel" class="form-select" asp-items="ViewBag.HierarchicalLevels" required>
+                    <option value="" disabled selected>Select a level</option>
+                </select>
                 <span asp-validation-for="HierarchicalLevel" class="text-danger"></span>
             </div>
 

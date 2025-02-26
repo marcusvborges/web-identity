@@ -50,6 +50,8 @@ namespace WebIdentity.Controllers
         [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public IActionResult Create()
         {
+            ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name");
+            ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name");
             ViewBag.HierarchicalLevels = Enum.GetValues(typeof(HierarchicalLevel))
                                              .Cast<HierarchicalLevel>()
                                              .Select(e => new SelectListItem
