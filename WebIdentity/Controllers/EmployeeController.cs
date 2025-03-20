@@ -22,11 +22,13 @@ namespace WebIdentity.Controllers
             _context = context;
         }
 
-
-        //[AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employees.ToListAsync());
+            var employees = await _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.Sector)
+                .ToListAsync();
+            return View(employees);
         }
 
         [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
@@ -38,6 +40,8 @@ namespace WebIdentity.Controllers
             }
 
             var employee = await _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.Sector)
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
@@ -52,21 +56,25 @@ namespace WebIdentity.Controllers
         {
             ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name");
             ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name");
-            ViewBag.HierarchicalLevels = Enum.GetValues(typeof(HierarchicalLevel))
-                                             .Cast<HierarchicalLevel>()
-                                             .Select(e => new SelectListItem
-                                             {
-                                                 Text = e.ToString(),    // Nome do Enum
-                                                 Value = e.ToString()    // Valor do Enum
-                                             })
-                                             .ToList();
+            ViewBag.HierarchicalLevels = Enum
+                .GetValues(typeof(HierarchicalLevel))                                            
+                .Cast<HierarchicalLevel>()                                            
+                .Select(e => new SelectListItem                                           
+                {                                            
+                    Text = e.ToString(),                                               
+                    Value = e.ToString()                                      
+                })                                         
+                .ToList();
 
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Name,Email,Age,Department")] Employee employee)
+        public async Task<IActionResult> Create([Bind(
+            "EmployeeId,Name,Email,BirthDate, PhoneNumber," +
+            "DateAdmission,SectorId,DepartmentId,HierarchicalLevel"
+        )] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -86,16 +94,31 @@ namespace WebIdentity.Controllers
             }
 
             var employee = await _context.Employees.FindAsync(id);
+
             if (employee == null)
             {
                 return NotFound();
             }
+
+            ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name", employee.SectorId);
+            ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name", employee.DepartmentId);
+            ViewBag.HierarchicalLevels = new SelectList(
+                Enum.GetValues(typeof(HierarchicalLevel))
+                    .Cast<HierarchicalLevel>()
+                    .Select(e => new { Id = e.ToString(), Name = e.ToString() }),
+                "Id",
+                "Name",
+                employee.HierarchicalLevel.ToString() // Define o valor selecionado
+            );
             return View(employee);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Email,Age,Department")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind(
+            "EmployeeId,Name,Email,BirthDate, PhoneNumber," +
+            "DateAdmission,SectorId,DepartmentId,HierarchicalLevel"
+        )] Employee employee)
         {
             if (id != employee.EmployeeId)
             {

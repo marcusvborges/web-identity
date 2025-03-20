@@ -30,21 +30,21 @@
             </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        <div class="department-button">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a> 
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                        <div/>
-                    </td>
+            @foreach (var item in Model) 
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <div class="department-button">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a> 
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            <div/>
+                        </td>
                     
-                </tr>
-        }
+                    </tr>
+            }
         </tbody>
     </table>
 </div>

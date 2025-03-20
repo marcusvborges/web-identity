@@ -29,9 +29,33 @@
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
-                <span asp-validation-for="Department" class="text-danger"></span>
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="DateAdmission" class="control-label"></label>
+                <input asp-for="DateAdmission" class="form-control" />
+                <span asp-validation-for="DateAdmission" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="SectorId" class="control-label">Sector</label>
+                <select asp-for="SectorId" class="form-select" asp-items="ViewBag.Sectors">
+                    <option value="" disabled>Select a sector</option>
+                </select>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="DepartmentId" class="control-label">Department</label>
+                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments">
+                    <option value="" disabled>Select a department</option>
+                </select>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="HierarchicalLevel" class="control-label"></label>
+                <select asp-for="HierarchicalLevel" class="form-select" asp-items="ViewBag.HierarchicalLevels">
+                    <option value="" disabled>Selecione um nível</option>
+                </select>
+                <span asp-validation-for="HierarchicalLevel" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
                 <input type="submit" value="Save" class="btn btn-primary" /> |
@@ -40,10 +64,6 @@
         </form>
     </div>
 </div>
-
-@* <div>
-    <a class="btn btn-primary" asp-action="Index">Back to List</a>
-</div> *@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

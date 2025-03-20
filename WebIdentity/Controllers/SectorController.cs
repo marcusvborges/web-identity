@@ -19,9 +19,14 @@ namespace WebIdentity.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Sectors.ToListAsync());
+            var sectors = await _context.Sectors
+                .Include(s => s.Department)
+                .ToListAsync();
+
+            return View(sectors);
         }
 
+        [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public IActionResult Create()
         {
             ViewBag.Departments = new SelectList(_context.Departments,"Id", "Name");
@@ -29,17 +34,67 @@ namespace WebIdentity.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id,Name,Department")] Sector sector)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Name,DepartmentId")] Sector sector)
         {
             if (ModelState.IsValid)
             {
                 _context.Sectors.Add(sector);
                 await _context.SaveChangesAsync();
-                return RedirectToAction();
+                return RedirectToAction(nameof(Index));
 ;            }
             return View(sector);
         }
 
+        [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var sector = await _context.Sectors
+                .Include(s => s.Department)
+                .FirstOrDefaultAsync(s => s.Id == id);
+
+            if (sector == null)
+            {
+                return NotFound();
+            }
+
+            return View(sector);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sector = await _context.Sectors.FindAsync(id);
+            if (sector == null)
+            {
+                return NotFound();
+            }
+            return View(sector);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int? id)
+        {
+            var sector = await _context.Sectors.FindAsync(id);
+            if (sector != null)
+            {
+                _context.Sectors.Remove(sector);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }

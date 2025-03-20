@@ -11,28 +11,52 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            Name
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BirthDate)
+            Birth Date
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.BirthDate)
         </dd>
+        <dt class="col-sm-2">
+            Phone Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            Date Admission
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateAdmission)
+        </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
+            Department
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department)
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+         <dt class = "col-sm-2">
+            Sector
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sector.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Level
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HierarchicalLevel)
         </dd>
     </dl>
 </div>
