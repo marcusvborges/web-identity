@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nEKAp8GZU/rkealnrXWcJv+lHX0sVCzuDKBbmUZ4t3Q=",
+  "Hash": "rfnMj84GDQk1FT4ubI9/Cb+7ylLidW501zXNunkmxV8=",
   "Source": "WebIdentity",
   "BasePath": "_content/WebIdentity",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\wwwroot\\js\\dynamicSelects.js",
+      "SourceId": "WebIdentity",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\wwwroot\\",
+      "BasePath": "_content/WebIdentity",
+      "RelativePath": "js/dynamicSelects.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dynamicSelects.js"
     },
     {
       "Identity": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\wwwroot\\js\\site.js",

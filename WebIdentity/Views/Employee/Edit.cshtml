@@ -39,15 +39,15 @@
                 <span asp-validation-for="DateAdmission" class="text-danger"></span>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="SectorId" class="control-label">Sector</label>
-                <select asp-for="SectorId" class="form-select" asp-items="ViewBag.Sectors">
-                    <option value="" disabled>Select a sector</option>
+                <label for="SectorId" class="form-label">Sector</label>
+                <select asp-for="SectorId" asp-items="ViewBag.Sectors" class="form-select">
+                    <option value="">Select a sector</option>
                 </select>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="DepartmentId" class="control-label">Department</label>
-                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments">
-                    <option value="" disabled>Select a department</option>
+                <label for="DepartmentId" class="form-label">Department</label>
+                <select asp-for="DepartmentId" asp-items="ViewBag.Departments" class="form-select">
+                    <option value="">Select a department</option>
                 </select>
             </div>
             <div class="form-group mb-2">
@@ -66,5 +66,6 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/dynamicSelects.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

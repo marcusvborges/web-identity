@@ -28,6 +28,7 @@ namespace WebIdentity.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")]Department department) 
         {
             if (ModelState.IsValid)

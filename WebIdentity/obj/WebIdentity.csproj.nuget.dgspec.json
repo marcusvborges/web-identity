@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\WebIdentity.csproj": {}
+    "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj": {}
   },
   "projects": {
-    "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\WebIdentity.csproj": {
+    "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\WebIdentity.csproj",
+        "projectUniqueName": "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj",
         "projectName": "WebIdentity",
-        "projectPath": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\WebIdentity.csproj",
+        "projectPath": "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj",
         "packagesPath": "C:\\Users\\Marcus\\.nuget\\packages\\",
-        "outputPath": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\obj\\",
+        "outputPath": "C:\\dotNetProjects\\web-identity\\WebIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Marcus\\AppData\\Roaming\\NuGet\\NuGet.Config",

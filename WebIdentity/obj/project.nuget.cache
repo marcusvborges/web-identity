@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YlCstMJnzVw=",
+  "dgSpecHash": "N5JjN5rZUsU=",
   "success": true,
-  "projectFilePath": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\WebIdentity.csproj",
+  "projectFilePath": "C:\\dotNetProjects\\web-identity\\WebIdentity\\WebIdentity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marcus\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

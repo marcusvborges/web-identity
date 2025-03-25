@@ -28,6 +28,7 @@ namespace WebIdentity.Controllers
                 .Include(e => e.Department)
                 .Include(e => e.Sector)
                 .ToListAsync();
+
             return View(employees);
         }
 
@@ -54,8 +55,14 @@ namespace WebIdentity.Controllers
         [Authorize(Policy = "RequireUserAdminSuperAdminRole")]
         public IActionResult Create()
         {
-            ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name");
-            ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name");
+            //ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name");
+            //ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name");
+            ViewBag.Departments = _context.Departments
+                .Select(d => new SelectListItem { Value = d.Id.ToString(), Text = d.Name })
+                .ToList();
+            ViewBag.Sectors = _context.Sectors
+                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
+                .ToList();
             ViewBag.HierarchicalLevels = Enum
                 .GetValues(typeof(HierarchicalLevel))                                            
                 .Cast<HierarchicalLevel>()                                            
@@ -100,8 +107,12 @@ namespace WebIdentity.Controllers
                 return NotFound();
             }
 
-            ViewBag.Sectors = new SelectList(_context.Sectors, "Id", "Name", employee.SectorId);
-            ViewBag.Departments = new SelectList(_context.Departments, "Id", "Name", employee.DepartmentId);
+            ViewBag.Departments = _context.Departments
+                .Select(d => new SelectListItem { Value = d.Id.ToString(), Text = d.Name })
+                .ToList();
+            ViewBag.Sectors = _context.Sectors
+                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
+                .ToList();
             ViewBag.HierarchicalLevels = new SelectList(
                 Enum.GetValues(typeof(HierarchicalLevel))
                     .Cast<HierarchicalLevel>()
@@ -123,6 +134,13 @@ namespace WebIdentity.Controllers
             if (id != employee.EmployeeId)
             {
                 return NotFound();
+            }
+
+            var departmentExists = await _context.Departments.AnyAsync(d => d.Id == employee.DepartmentId);
+            if (!departmentExists)
+            {
+                ModelState.AddModelError("DepartmentId", "O departamento selecionado não existe.");
+                return View(employee);
             }
 
             if (ModelState.IsValid)
@@ -184,5 +202,28 @@ namespace WebIdentity.Controllers
         {
             return _context.Employees.Any(e => e.EmployeeId == id);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDepartmentsBySector(int sectorId)
+        {
+            var department = await _context.Departments
+                .Where(d => d.Sectors.Any(s => s.Id == sectorId)) 
+                .Select(d => new { d.Id, d.Name })
+                .FirstOrDefaultAsync(); // ⬅️ Como um setor pertence a um único departamento, buscamos apenas um.
+
+            return Json(department != null ? new[] { department } : new object[] { }); // ⬅️ Retorna um array, evitando erro no JS.
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetSectorsByDepartment(int departmentId)
+        {
+            var sectors = await _context.Sectors
+                .Where(s => s.DepartmentId == departmentId) // ⬅️ Aqui usamos `DepartmentId` diretamente.
+                .Select(s => new { s.Id, s.Name })
+                .ToListAsync();
+
+            return Json(sectors);
+        }
+
     }
 }

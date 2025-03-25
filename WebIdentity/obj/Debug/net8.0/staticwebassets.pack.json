@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\wwwroot\\js\\dynamicSelects.js",
+      "PackagePath": "staticwebassets\\js\\dynamicSelects.js"
+    },
+    {
       "Id": "C:\\dotNetProjects\\Nova pasta\\web-identity\\WebIdentity\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

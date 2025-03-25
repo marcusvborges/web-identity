@@ -37,20 +37,27 @@
                 <input asp-for="DateAdmission" class="form-control" />
                 <span asp-validation-for="DateAdmission" class="text-danger"></span>
             </div>
-            <div class="form-group mb-2">
 
-                <label asp-for="Sector" class="control-label"></label>
-                <select asp-for="SectorId" class="form-select" asp-items="ViewBag.Sectors">
-                    <option value="" disabled selected>Select a sector</option>
-                </select>
-            </div>
-            <div class="form-group mb-2">
-
-                <label asp-for="Department" class="control-label"></label>
-                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments">
-                    <option value="" disabled selected>Select a department</option>
-                </select>
-            </div>
+                <div class="form-group mb-2">
+                    <label asp-for="SectorId" class="form-label">Sector</label>
+                    <select asp-for="SectorId" class="form-select">
+                        <option value="" disabled selected>Select a sector</option>
+                        @foreach (var sector in ViewBag.Sectors)
+                        {
+                            <option value="@sector.Value">@sector.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="DepartmentId" class="form-label">Department</label>
+                    <select asp-for="DepartmentId" class="form-select">
+                        <option value="" disabled selected>Select a department</option>
+                        @foreach (var department in ViewBag.Departments)
+                        {
+                            <option value="@department.Value">@department.Text</option>
+                        }
+                    </select>
+                </div>
 
             <div class="form-group mb-3">
                 <label asp-for="HierarchicalLevel" class="control-label">Level</label>
@@ -69,5 +76,6 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/dynamicSelects.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
