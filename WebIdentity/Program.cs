@@ -8,8 +8,7 @@ using WebIdentity.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(); // Add services to the container.
 
 var connection = builder.Configuration.GetConnectionString("DefaultConnectionString");
 
@@ -18,11 +17,12 @@ builder.Services.AddDbContext<MySQLDbContext>(options =>
     ServiceLifetime.Scoped);
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<MySQLDbContext>();
+    .AddEntityFrameworkStores<MySQLDbContext>()
+    .AddDefaultTokenProviders(); // Register providers required for password reset.
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    options.Password.RequiredLength = 10;
+    options.Password.RequiredLength = 8;
     options.Password.RequiredUniqueChars = 3;
     options.Password.RequireNonAlphanumeric = false;
 });
@@ -41,6 +41,8 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 
 var app = builder.Build();
 

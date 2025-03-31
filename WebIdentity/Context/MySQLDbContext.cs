@@ -18,15 +18,6 @@ namespace WebIdentity.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Employee>()
-            //.HasData(
-            //    new Employee
-            //    {
-            //        EmployeeId = 1,
-            //        Name = "AdmimInitialUser",
-            //        Email = "marcusvbs2018@gmail.com",
-            //    }
-            //);
             modelBuilder.Entity<Department>()
             .HasMany(d => d.Sectors)     // Um Departamento tem muitos Setores
             .WithOne(s => s.Department)  // Cada Setor pertence a um Departamento
